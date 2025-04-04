@@ -1,0 +1,70 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules
+.pnpm-store/
+
+# Build outputs
+dist
+dist-ssr
+coverage
+*.local
+.output
+.nuxt
+
+# Cache and temp files
+.cache
+.temp
+.eslintcache
+.stylelintcache
+.env.local
+.env.*.local
+.env.production
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Testing
+/coverage
+/cypress/screenshots
+/cypress/videos
+/cypress/downloads
+
+# Local network proxy config
+local-api.js
+
+# Temporary files
+.tmp
+tmp/
+temp/
+
+# Generated files
+.firebase
+.netlify
+.vercel
+.turbo
+/stats.html
+
+# OS specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
