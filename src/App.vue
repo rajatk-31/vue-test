@@ -1,91 +1,37 @@
 <script setup lang="ts">
 // App component
+import logo from "./assets/logo-transparent.png";
+
+const scrollToHome = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 </script>
 
 <template>
-  <header>
-    <nav aria-label="Main navigation">
-      <router-link to="/">Home</router-link> <span class="nav-divider">|</span>
-      <router-link to="/about-me">About Me</router-link>
-    </nav>
-  </header>
+  <div class="min-h-screen bg-white dark:bg-gray-900">
+    <!-- Fixed Navigation Bar -->
+    <header
+      class="fixed top-0 left-0 right-0 w-full z-50 bg-white dark:bg-[#91946d] !py-2 !px-8"
+    >
+      <nav class="flex justify-between items-center !text-white">
+        <div>
+          <div class="!rounded-xl cursor-pointer" @click="scrollToHome">
+            <img :src="logo" alt="Logo" class="w-24" />
+          </div>
+        </div>
+        <div>
+          <div>
+            <div href="#home" class="!text-white">Home</div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-  <main>
-    <router-view />
-  </main>
+    <!-- Main Content with padding-top to account for fixed header -->
+    <main class="!pt-20">
+      <router-view />
+    </main>
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #e0e0e0;
-}
-
-nav {
-  padding: 30px;
-  background-color: #1e1e1e;
-  margin-bottom: 20px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #82b1ff;
-  margin: 0 10px;
-  text-decoration: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-nav a:hover,
-nav a:focus {
-  background-color: #333333;
-  text-decoration: underline;
-  outline: none;
-}
-
-nav a.router-link-exact-active {
-  color: #ffffff;
-  background-color: #2e7d32;
-}
-
-.nav-divider {
-  color: #666666;
-  margin: 0 5px;
-}
-
-main {
-  padding: 20px;
-}
-
-@media (prefers-color-scheme: light) {
-  #app {
-    color: #212121;
-  }
-
-  nav {
-    background-color: #f0f0f0;
-  }
-
-  nav a {
-    color: #1565c0;
-  }
-
-  nav a:hover,
-  nav a:focus {
-    background-color: #e0e0e0;
-  }
-
-  nav a.router-link-exact-active {
-    color: #ffffff;
-    background-color: #2e7d32;
-  }
-
-  .nav-divider {
-    color: #9e9e9e;
-  }
-}
-</style>
+<style></style>
